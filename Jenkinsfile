@@ -33,10 +33,10 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'docker stop jenkins-demo || true'
-        sh 'docker rm jenkins-demo || true'
+        sh 'docker stop jenkins-demo-secb || true'
+        sh 'docker rm jenkins-demo-secb || true'
         sh 'docker pull $DOCKER_IMAGE:latest'
-        sh 'docker run -d -p 3000:3000 --name jenkins-demo $DOCKER_IMAGE:latest'
+        sh 'docker run -d -p 3000:3000 --name jenkins-demo-secb $DOCKER_IMAGE:latest'
         echo 'App live at localhost:3000!'
       }
     }
